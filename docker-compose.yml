@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  nginx:
+    restart: always
+    image: nginx:1.13-alpine
+    network_mode: host
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx_pleroma.conf:/etc/nginx/conf.d/nginx_pleroma.conf
+      - /var/lib/pleroma/nginx/static:/usr/share/nginx/html
