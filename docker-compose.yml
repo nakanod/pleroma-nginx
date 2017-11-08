@@ -7,6 +7,9 @@ services:
     network_mode: host
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx_pleroma.conf:/etc/nginx/conf.d/nginx_pleroma.conf
-      - /var/lib/pleroma/nginx/static:/usr/share/nginx/html
+      - ./fullchain.pem:/etc/ssl/fullchain.pem
+      - ./privkey.pem:/etc/ssl/privkey.pem
+      #- /var/lib/pleroma/nginx/static:/usr/share/nginx/html
