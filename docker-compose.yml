@@ -8,7 +8,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx_pleroma.conf:/etc/nginx/conf.d/nginx_pleroma.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
       - /var/lib/pleroma/nginx/static:/usr/share/nginx/html
     logging:
       driver: "json-file"
